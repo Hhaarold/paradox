@@ -1,0 +1,6 @@
+import ResponseCard from './ResponseCard.jsx';
+
+function LayerCard({ layer, index, score, users, currentUser, draft, mode, onDraftChange, onModeChange, onRespond, onVote }) {
+  return <section className="layer"><div className="layer-head"><div><p className="eyebrow">Capa {index + 1}</p><h2>{layer.question}</h2></div><span className="badge">Resolución {score}%</span></div>{layer.responses.map((response) => <ResponseCard key={response.id} response={response} author={users.find((user) => user.id === response.authorId)} selectedVote={response.votes[currentUser?.id]} canVote={Boolean(currentUser)} onVote={(value) => onVote(response.id, value)} />)}{currentUser ? <div className="form" style={{ marginTop: 14 }}><select value={mode} onChange={(event) => onModeChange(event.target.value)}><option value="resolve">Proponer una resolución</option><option value="complicate">Complicar con una pregunta</option></select><textarea value={draft} placeholder="Escribe tu aportación para esta capa" onChange={(event) => onDraftChange(event.target.value)} /><button className="button" type="button" onClick={onRespond}>Publicar aportación</button></div> : <p className="muted">Inicia sesión para debatir y votar.</p>}</section>;
+}
+export default LayerCard;

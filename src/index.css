@@ -1,0 +1,135 @@
+:root {
+  /* Fondos */
+  --bg: #F8F7FC;
+  --bg-secondary: #F1EFF8;
+  --surface: #FFFFFF;
+  --surface-hover: #F5F3FA;
+
+  /* Texto */
+  --text: #52525B;
+  --text-h: #18181B;
+  --text-secondary: #3F3F46;
+  --text-muted: #71717A;
+
+  /* Bordes */
+  --border: #E4E1EC;
+  --border-hover: #C4B5FD;
+
+  /* Logo */
+  --logo: #7C3AED;
+
+  /* Accent */
+  --accent: #7C3AED;
+  --accent-hover: #6D28D9;
+  --accent-light: #8B5CF6;
+
+  --accent-bg: rgba(124, 58, 237, 0.08);
+  --accent-border: rgba(124, 58, 237, 0.35);
+
+  /* Inputs */
+  --input-bg: #FFFFFF;
+  --input-border: #D4D0DF;
+  --input-focus: #7C3AED;
+  --input-text: #18181B;
+  --placeholder: #A1A1AA;
+
+  /* Botones */
+  --button-bg: #7C3AED;
+  --button-hover: #6D28D9;
+  --button-text: #FFFFFF;
+
+  /* Links */
+  --link: #6D28D9;
+  --link-hover: #5B21B6;
+
+  /* Estados */
+  --success: #16A34A;
+  --warning: #D97706;
+  --error: #DC2626;
+
+  /* Sombras */
+  --shadow:
+    0 10px 25px rgba(24, 24, 27, 0.08),
+    0 4px 8px rgba(24, 24, 27, 0.05);
+
+  /* Tipografía */
+  --font-main:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+
+/* ========================================
+   VARIABLES — MODO OSCURO
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+
+  :root {
+    /* Fondos */
+    --bg: #0B0A10;
+    --bg-secondary: #11101A;
+    --surface: #16141F;
+    --surface-hover: #1C1928;
+
+    /* Texto */
+    --text: #A1A1AA;
+    --text-h: #F4F4F5;
+    --text-secondary: #D4D4D8;
+    --text-muted: #71717A;
+
+    /* Bordes */
+    --border: #272330;
+    --border-hover: #4C1D95;
+
+    /* Logo */
+    --logo: #7C3AED;
+
+    /* Accent */
+    --accent: #7C3AED;
+    --accent-hover: #8B5CF6;
+    --accent-light: #A78BFA;
+
+    --accent-bg: rgba(124, 58, 237, 0.12);
+    --accent-border: rgba(124, 58, 237, 0.45);
+
+    /* Inputs */
+    --input-bg: #07070D;
+    --input-border: #3B2A61;
+    --input-focus: #7C3AED;
+    --input-text: #F8FAFC;
+    --placeholder: #71717A;
+
+    --button-bg: #7C3AED;
+    --button-hover: #6D28D9;
+    --button-text: #FFFFFF;
+
+    --link: #A78BFA;
+    --link-hover: #C084FC;
+
+    --success: #22C55E;
+    --warning: #F59E0B;
+    --error: #EF4444;
+
+    /* Sombras */
+    --shadow:
+      0 10px 30px rgba(0, 0, 0, 0.35),
+      0 4px 10px rgba(0, 0, 0, 0.25);
+
+    --shadow-accent:
+      0 0 25px rgba(124, 58, 237, 0.15);
+}
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
