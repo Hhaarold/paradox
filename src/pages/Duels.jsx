@@ -16,10 +16,10 @@ function Duels() {
   }
 
   // Cuando le da a enviar el reto
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    createDuel(paradoxId, opponentId);
-    setOpponentId(''); // limpiamos el select de oponente
+    const result = await createDuel(paradoxId, opponentId);
+    if (!result?.error) setOpponentId('');
   };
 
   // Filtramos los duelos donde participe el usuario (como retador o retado)

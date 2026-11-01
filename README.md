@@ -1,16 +1,51 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-Currently, two official plugins are available:
+# ParadoX
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Aplicación web de una red social de paradojas filosóficas. Permite crear paradojas, responder preguntas, votar y participar en duelos.
 
-## React Compiler
+## Tecnologías
+- React
+- Vite
+- JavaScript
+- CSS
+- React Router
+- Context API
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Funcionalidades
+- Registro e inicio de sesión.
+- Creación y consulta de paradojas.
+- Publicación de respuestas.
+- Sistema de votaciones.
+- Perfiles de usuario.
+- Ranking.
+- Duelos.
 
-## Expanding the Oxlint configuration
+## Instalación
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Clonar el repositorio:
+
+```bash
+git clone https://github.com/Hhaarold/paradox.git
+cd paradox
+npm install
+```
+
+Crear un archivo `.env`:
+
+```env
+VITE_API_URL=http://localhost:3000/api
+```
+
+Ejecutar:
+
+```bash
+npm run dev
+```
+
+## Conexión con el backend
+
+El frontend se comunica con una API REST desarrollada en Node.js y Express.
+
+**Repositorio backend:** https://github.com/Hhaarold/paradox_backend
+

@@ -19,7 +19,7 @@ const statuses = ['All', 'Active', 'Resolved', 'Draft', 'Frozen'];
 
 function Home() {
   // Sacamos la data del context, el usuario actual y las métricas
-  const { data, currentUser, getParadoxMetrics } = useParadox();
+  const { data, currentUser, getParadoxMetrics, loading, error } = useParadox();
   
   // Guardamos los filtros que seleccione el usuario
   const [category, setCategory] = useState('All');
@@ -90,13 +90,16 @@ function Home() {
         </div>
       </div>
 
+      {loading && <div className="panel"><p className="muted">Cargando paradojas…</p></div>}
+      {error && <div className="panel"><p className="error">{error}</p></div>}
+
       {/* Grid con la lista de tarjetas de paradojas */}
       <div className="grid paradox-grid">
         {paradoxes.map((paradox) => (
           <ParadoxCard
             key={paradox.id}
             paradox={paradox}
-            author={usersById.get(paradox.createdBy)}
+            author={usersById.get(paradox.createdBy) ?? paradox.author}
             metrics={getParadoxMetrics(paradox)}
           />
         ))}

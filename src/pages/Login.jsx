@@ -8,8 +8,8 @@ function Login() {
   const navigate = useNavigate();
 
   // Estados para controlar los inputs del form y los mensajes de error
-  const [email, setEmail] = useState('camiv@paradox.local');
-  const [password, setPassword] = useState('paradox123');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
   // Si ya inició sesión, lo mandamos directo al home sin dejarlo ver el login
@@ -18,11 +18,11 @@ function Login() {
   }
 
   // Manejamos el envío del formulario
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     // Intentamos validar las credenciales
-    const result = login(email, password);
+    const result = await login(email, password);
     if (result.error) {
       setError(result.error);
       return;
@@ -72,11 +72,6 @@ function Login() {
             Entrar
           </button>
         </form>
-
-        {/* Texto con credenciales de prueba */}
-        <p className="muted">
-          Datos de prueba: sofia@paradox.local / paradox123
-        </p>
 
         {/* Enlace para ir a la vista de registro */}
         <p>

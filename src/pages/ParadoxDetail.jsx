@@ -29,7 +29,7 @@ function ParadoxDetail() {
 
   // Buscamos al usuario que creó esta paradoja
   const author = useMemo(
-    () => data.users.find((user) => user.id === paradox?.createdBy),
+    () => data.users.find((user) => user.id === paradox?.createdBy) ?? paradox?.author,
     [data.users, paradox?.createdBy]
   );
 
@@ -52,7 +52,7 @@ function ParadoxDetail() {
   };
 
   // Envía la respuesta a la capa indicada
-  const handleSubmitResponse = (layerId) => {
+  const handleSubmitResponse = async (layerId) => {
     const content = drafts[layerId] ?? '';
     const mode = modes[layerId] ?? 'resolve';
 

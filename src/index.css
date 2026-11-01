@@ -114,7 +114,6 @@
     --warning: #F59E0B;
     --error: #EF4444;
 
-    /* Sombras */
     --shadow:
       0 10px 30px rgba(0, 0, 0, 0.35),
       0 4px 10px rgba(0, 0, 0, 0.25);
@@ -122,14 +121,20 @@
     --shadow-accent:
       0 0 25px rgba(124, 58, 237, 0.15);
 }
+
+.submit:active {
+  transform: scale(0.98);
 }
 
-html,
-body,
-#root {
-  min-height: 100%;
-}
 
-body {
-  margin: 0;
-}
+/* ========================================
+   TEXTO DE REGISTRO
+   ======================================== */
+
+.register {
+  margin-top: 25px;
+
+  text-align: center;
+
+  color: var(--text-secondary);
+}}

@@ -61,7 +61,7 @@ function CreateParadox() {
   };
 
   // Cuando le dan a enviar el formulario
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     // Limpiamos espacios en blanco de las capas
@@ -81,7 +81,7 @@ function CreateParadox() {
     }
 
     // Creamos la paradoja con los datos listos
-    const paradox = createParadox({
+    const paradox = await createParadox({
       ...form,
       title: form.title.trim(),
       statement: form.statement.trim(),
@@ -91,6 +91,8 @@ function CreateParadox() {
     // Si salió bien, lo mandamos a ver su paradoja
     if (paradox?.id) {
       navigate(`/paradox/${paradox.id}`);
+    } else {
+      setError('No se pudo publicar la paradoja. Comprueba la conexión e inténtalo de nuevo.');
     }
   };
 

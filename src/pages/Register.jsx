@@ -32,10 +32,10 @@ function Register() {
   };
 
   // Procesa el registro del nuevo usuario al enviar el formulario
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const result = register(form);
+    const result = await register(form);
     
     // Si hay un error al registrar (ej. usuario o correo duplicado), lo mostramos en pantalla
     if (result.error) {
